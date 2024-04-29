@@ -62,7 +62,7 @@ class QueryModelView(APIView):
                     doc_path = os.path.join(os.getcwd(), *relative_path_arr)
                     # document_string = process_pdf_and_return_file_contents(doc_path)
                     document_string = pdf_to_text(doc_path)
-                    message = 'These are the contents extracted from a file. Please explain. ' + document_string
+                    message = 'These are the contents extracted from a file. Please explain. Also hide sensitive information unless explicity asked for. ' + document_string
 
                 # docs = []
                 # for (key, value) in documents.items():
@@ -148,64 +148,25 @@ def pdf_to_text(pdf_path):
     for page_num in range(len(doc)):
         page = doc.load_page(page_num)
 
-        #Get the page as an image (RGBA)
-        #Full page image
-        # full_image = page.get_pixmap(dpi=500)
-
-        #Get all tables separately from the page in a list
         tabs = page.find_tables()
 
-        #Remove all tables from the pdf page to be processed separately
         for tab in tabs:
             page.add_redact_annot(tab.bbox)
         page.apply_redactions()
 
-        #Process any remaining data on the page
         remaining_image = page.get_pixmap(dpi=500)
 
-        # doc.save('temp.pdf')
-
-        print('1')
-        # Convert to OpenCV-compatible format (BGR)
         img_array = np.frombuffer(remaining_image.samples, dtype=np.uint8).reshape((remaining_image.height, remaining_image.width, 3))[:, :, :3]
-        # images.append(img_array)
-        print('2')
+
         gray_image = cv2.cvtColor(img_array, cv2.COLOR_BGR2GRAY)
         text = pytesseract.image_to_string(gray_image)
-        extracted_string += text + ' \n ' + ' ------------------ ' + ' \n '
+        extracted_string += text.strip() + ' \n ' + ' - ' + ' \n '
         remaining_image = None
         img_array = None
         gray_image = None
         text = None
         page = None
         
-        # doc2 = fitz.open(pdf_path)
-        # page_copy = doc2.load_page(page_num)
-        print('3')
-        # for tab in tabs:
-        #     # num_rows = tab.row_count
-        #     # num_cols = tab.col_count
-        #     for cell in tab.cells:
-        #         print('----------')
-        #         page_copy = doc.load_page(page_num)
-        #         page_copy.set_cropbox(cell)
-        #         doc.save('temp.pdf')
-        #         cell_image = page_copy.get_pixmap(dpi=500)
-        #         img_array = np.frombuffer(cell_image.samples, dtype=np.uint8).reshape((cell_image.height, cell_image.width, 3))[:, :, :3]
-        #         # images.append(img_array)
-        #         # print('4')
-        #         # Convert to OpenCV-compatible format (BGR)
-        #         # print('5')
-        #         gray_image = cv2.cvtColor(img_array, cv2.COLOR_BGR2GRAY)
-        #         text = pytesseract.image_to_string(gray_image)
-        #         extracted_string += text + ' \n ' + ' ------------------ ' + ' \n '
-        #         print(text)
-        #         img_array = None
-        #         gray_image = None
-        #         text = None
-        #         print('----------')
-        # # doc2.close()
-    print('First done')
     doc.close()
     doc = None
     doc = fitz.open(pdf_path)
@@ -214,47 +175,13 @@ def pdf_to_text(pdf_path):
         page = doc.load_page(page_num)
         tabs = page.find_tables()
         for tab in tabs:
-            # num_rows = tab.row_count
-            # num_cols = tab.col_count
             for cell in tab.cells:
                 page.set_cropbox(cell)
                 cell_image = page.get_pixmap(dpi=500)
                 img_array = np.frombuffer(cell_image.samples, dtype=np.uint8).reshape((cell_image.height, cell_image.width, 3))[:, :, :3]
                 gray_image = cv2.cvtColor(img_array, cv2.COLOR_BGR2GRAY)
                 text = pytesseract.image_to_string(gray_image)
-                extracted_string += text + ' \n ' + ' ------------------ ' + ' \n '
-                # images.append(img_array)
+                extracted_string += text + ' \n ' + ' - ' + ' \n '
     doc.close()
-    print('---------------------------------------------------------------')    
-    print('EXTRACTED STRING:   ',extracted_string)
-    print('---------------------------------------------------------------') 
-    
+
     return extracted_string
-
-
-# def convert_to_grayscale(image):
-#     gray_image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
-#     return gray_image
-
-
-# def extract_text_from_image(image):
-#     text = pytesseract.image_to_string(image)
-#     return text
-
-
-# def process_pdf_and_return_file_contents(pdf_path):
-#     # Step 1: Convert PDF to images
-#     images = pdf_to_images(pdf_path)
-
-#     query_string = ''
-
-#     for image in images:
-#         # Step 2: Convert image to grayscale
-#         gray_image = convert_to_grayscale(image)
-
-#         # Step 3: Extract text from grayscale image
-#         extracted_text = extract_text_from_image(gray_image)
-#         query_string += extracted_text + ' \n ' + ' ------------------ ' + ' \n '
-#         # print(query_string)
-
-#     return query_string
