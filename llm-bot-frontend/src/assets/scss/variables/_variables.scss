@@ -1,0 +1,56 @@
+//  ================================================================================================
+//  ? TIP:  It is recommended to use this file for overriding bootstrap variables.
+//  ================================================================================================
+
+// $primary: #094120;
+// $light: #e4efe7;
+// $primary: #66D3FA;
+// $light: #66D3FA;
+$primary: #41A2DB;
+$light: #D5F3FE;
+$dark: #15233E;
+//$light-text-color: #6e6b7b;
+$light-text-color: #000000;
+$light-text-muted-color: #6e6b7b;
+//$dark-text-color: #b4b7bd;
+$dark-text-color: #ffffff;
+$dark-text-muted-color: #d0d2d6;
+$menu-light: #CCE8F3;
+$menu-light-2: #C3DDE8;
+//$menu-dark: #0F5298;
+$menu-dark: #1E2E49;
+$menu-dark-2: #272F54;
+$footer-light: #CCE8F3;
+$footer-dark: #1E2E49;
+$header-light: #CCE8F3;
+$header-dark: #1E2E49;
+
+$light-input-border: $primary;
+$dark-input-border: $primary;
+$light-input-bg: $menu-light;
+$dark-input-bg: $menu-dark;
+$light-input-placeholder: $light-text-muted-color;
+$dark-input-placeholder: $dark-text-muted-color;
+$light-input-disabled-border: $primary;
+$dark-input-disabled-border: $primary;
+
+$light-switch: $light-text-muted-color;
+$dark-switch: $dark-text-muted-color;
+$light-switch-disabled: $light-switch;
+$dark-switch-disabled: $dark-switch;
+
+$light-table: $menu-light;
+$dark-table: $menu-dark;
+$light-table-header: $menu-light-2;
+$dark-table-header: $menu-dark-2;
+$light-table-row: $light-table;
+$dark-table-row: $dark-table;
+$light-table-hover: $primary;
+$dark-table-hover: $primary;
+$light-table-striped: $menu-light-2;
+$dark-table-striped: $menu-dark-2;
+
+$dark-box-shadow: 0 4px 24px 0 rgba(#000000, 0.24);
+$light-box-shadow: 0 4px 24px 0 rgba(#000000, 0.24);
+// $menu-light: #CCE8F3;
+// $menu-dark: #0F5298;

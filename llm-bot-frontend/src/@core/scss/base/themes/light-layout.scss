@@ -1,0 +1,2677 @@
+// ================================================================================================
+// 	File Name: light-layout.scss
+// 	Description: SCSS file for light layout.
+// 	----------------------------------------------------------------------------------------------
+// 	Item Name: Vuexy  - Vuejs, HTML & Laravel Admin Dashboard Template
+// 	Author: PIXINVENT
+// 	Author URL: http://www.themeforest.net/user/pixinvent
+// ================================================================================================
+
+//@import '../bootstrap-extended/include'; // Bootstrap includes
+//@import '../components/include'; // Components includes
+@import '~@assets/scss/variables/_variables.scss'; // Components includes
+
+
+.light-layout {
+  @at-root body#{&} {
+    color: $light-text-color;
+    background-color: $light;
+  }
+
+  body {
+    color: $light-text-color;
+    background-color: $light;
+  }
+
+  // universal elements
+  //heading tags
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: $light-text-color;
+  }
+
+  // border color
+  .border,
+  .border-top,
+  .border-right,
+  .border-bottom,
+  .border-left {
+    border-color: $primary  !important;
+  }
+
+  .swal2-popup {
+    background-color: $menu-light-2  !important;
+  }
+ 
+  .vs__deselect{
+    fill: $light-text-color !important;
+  }
+
+  .vs__selected {
+    color: $light-text-color !important;
+    background-color: $primary  !important;
+  }
+
+  .vs--single{
+    .vs__selected {
+      color: $light-text-color !important;
+      background-color: $menu-light  !important;
+    }      
+  }
+
+  .vs--disabled {
+
+    &.vs--single{
+      .vs__selected {
+        color: $light-text-color !important;
+        background-color: $menu-light-2  !important;
+      }      
+    }
+  
+    .vs__dropdown-toggle,
+    .vs__clear,
+    .vs__search,
+    .vs__open-indicator {
+      background-color: $menu-light-2 !important;
+    }
+  }
+
+
+  // other tags
+  a {
+    color: $light-text-color;
+
+    &:hover {
+      color: $primary;
+    }
+  }
+
+  label {
+    color: $light-text-color;
+  }
+
+  .btn span {
+    color: inherit;
+  }
+
+  hr {
+    border-color: $primary;
+  }
+
+  pre {
+    background-color: $light  !important;
+    border: 0;
+
+    code {
+      background-color: inherit;
+      text-shadow: none;
+
+      // .operator,
+      .url {
+        background-color: $light;
+      }
+    }
+  }
+
+  code {
+    background-color: $light;
+  }
+
+  kbd {
+    background-color: $light;
+  }
+
+  // for light text
+  .text-light {
+    color: $gray-600  !important;
+  }
+
+  .text-muted {
+    color: $light-text-muted-color  !important;
+  }
+
+  .text-body {
+    color: $light-text-color  !important;
+  }
+
+  .text-body-heading {
+    color: $light-text-color;
+  }
+
+  .section-label {
+    color: $light-text-muted-color;
+  }
+
+  // shadow
+  .shadow {
+    box-shadow: $light-box-shadow  !important;
+  }
+
+  // blockquote footer
+  .blockquote-footer {
+    color: $light-text-muted-color;
+  }
+
+  // main navbar and header navbar shadow(generic navbar)
+  .header-navbar-shadow {
+    background: linear-gradient(180deg, rgba(22, 29, 49, 0.9) 44%, rgba(22, 29, 49, 0.43) 73%, rgba(22, 29, 49, 0));
+  }
+
+  // main header navbar light style
+
+  .horizontal-layout {
+    .header-navbar {
+      background-color: $menu-light;
+    }
+
+    &.navbar-sticky,
+    &.navbar-static {
+      .header-navbar {
+        background-color: $light;
+      }
+    }
+  }
+
+  .navbar-sticky {
+    .header-navbar {
+      &.navbar-shadow {
+        box-shadow: 0 4px 24px 0 rgba($black, 0.75);
+      }
+    }
+  }
+
+  .header-navbar {
+    background-color: $menu-light;
+
+    .navbar-container {
+      .nav {
+        .nav-item {
+          .nav-link {
+            color: $light-text-color;
+            background-color: transparent;
+
+            i,
+            svg {
+              color: $light-text-color;
+            }
+
+            &.bookmark-star {
+
+              i,
+              svg {
+                color: $light-text-color  !important;
+              }
+            }
+          }
+
+          &.nav-search {
+            .search-input {
+              &.open {
+                background-color: $menu-light;
+
+                .input {
+                  border-color: $primary;
+                }
+
+                .input,
+                .input::placeholder,
+                .search-input-close {
+                  color: $light-text-color;
+                }
+              }
+            }
+          }
+
+          .bookmark-input {
+            background-color: $menu-light;
+
+            .form-control {
+              background-color: $menu-light;
+            }
+          }
+
+          .search-list {
+            background-color: $menu-light;
+
+            li {
+              a {
+                color: $light-text-color;
+              }
+            }
+
+            .auto-suggestion.current_item {
+              background-color: $light;
+            }
+          }
+        }
+
+        li i.ficon,
+        li svg.ficon {
+          color: $light-text-color;
+        }
+
+        .dropdown-cart,
+        .dropdown-notification {
+          .dropdown-menu.dropdown-menu-media {
+            overflow: hidden;
+
+            .media {
+              border-color: $primary;
+
+              .media-meta {
+                color: $light-text-color;
+              }
+
+              &:hover {
+                background-color: $light;
+              }
+            }
+
+            .dropdown-menu-header {
+              border-bottom: 1px solid $primary;
+            }
+
+            .dropdown-menu-footer {
+              background-color: $menu-light;
+              border-top: 1px solid $primary;
+
+              .dropdown-item {
+                border-color: $primary;
+
+                &:hover {
+                  background-color: $menu-light;
+                }
+              }
+            }
+          }
+        }
+
+        .dropdown-cart {
+          &.empty-cart {
+            &:before {
+              background-color: $light;
+            }
+          }
+
+          li {
+            color: $light-text-color;
+          }
+
+          .cart-item {
+            color: $light-text-color;
+          }
+
+          .dropdown-header {
+            span {
+              color: $light-text-color;
+            }
+          }
+
+          .media {
+            img {
+              background-color: $light;
+            }
+          }
+
+          .media-heading .cart-item-by {
+            color: $light-text-muted-color;
+          }
+        }
+
+        .dropdown-notification {
+          .media-body .media-heading {
+            color: $light-text-color;
+          }
+
+          .notification-text {
+            color: $light-text-muted-color;
+          }
+        }
+      }
+    }
+
+    &.navbar-static-top {
+      background-color: transparent !important;
+    }
+
+    &[class*='bg-'] {
+      .navbar-nav {
+        .nav-item {
+          .nav-link {
+            background-color: inherit;
+          }
+        }
+      }
+    }
+  }
+
+  .swiper-slide {
+    font-weight: $headings-font-weight;
+    background-color: $menu-light;
+    height: auto;
+    width: auto !important;
+    cursor: pointer;
+
+    &.swiper-slide-active {
+      color: $light-text-color;
+      background-color: $primary  !important;
+      box-shadow: 0 3px 6px 0 rgba($primary, 0.5) !important;
+    }
+  }
+
+  .apexcharts-legend-text {
+    color: $light-text-color  !important;
+  }
+
+  text {
+    fill: $light-text-color  !important;
+  }
+
+  .b-form-datepicker,
+  .b-form-timepicker {
+    &.form-control {
+      background-color: $light-input-bg !important;
+      border-color: $light-input-border;
+    }
+
+    &.is-valid {
+      border-color: $success;
+    }
+
+    &.is-invalid {
+      border-color: $danger;
+    }
+  }
+
+
+  //Text color for Blank page with transparent card
+  .blank-page {
+    .card.bg-transparent {
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        color: $menu-light;
+      }
+
+      p {
+        color: $light;
+      }
+    }
+  }
+
+  // main menu
+  .main-menu {
+    background-color: $menu-light;
+
+    .shadow-bottom {
+      background: linear-gradient(180deg,
+          $menu-light 44%,
+          rgba($menu-light, 0.51) 73%,
+          rgba($menu-light, 0));
+    }
+
+    &:not(.expanded) {
+      .navigation {
+        .sidebar-group-active {
+          >a {
+            background-color: $light;
+          }
+        }
+      }
+    }
+
+    &.menu-light {
+      .navigation>li.open:not(.menu-item-closing)>a {
+        background-color: $primary;
+        box-shadow: none !important;
+      }
+
+      .navigation>li.sidebar-group-active>a {
+        background-color: $primary;
+        box-shadow: 0 0 10px 1px rgba($primary, 0.7);
+      }
+    }
+
+    .collapse-toggle-icon {
+      color: $primary  !important;
+    }
+  }
+
+  // Perfect Scrollbar
+  .ps__thumb-x,
+  .ps__thumb-y {
+    background-color: $light-text-color;
+  }
+
+  .ps .ps__rail-x.ps--clicking,
+  .ps .ps__rail-x:focus,
+  .ps .ps__rail-x:hover,
+  .ps .ps__rail-y.ps--clicking,
+  .ps .ps__rail-y:focus,
+  .ps .ps__rail-y:hover {
+    background-color: $primary;
+  }
+
+  .ps__rail-y.ps--clicking .ps__thumb-y,
+  .ps__rail-y:focus>.ps__thumb-y,
+  .ps__rail-y:hover>.ps__thumb-y {
+    background-color: $light-text-color;
+  }
+
+  // main menu content
+  .main-menu-content {
+    .navigation-main {
+      background-color: $menu-light;
+
+      .navigation-header {
+        color: $light-text-muted-color;
+      }
+
+      li {
+        a {
+          color: $light-text-color  !important;
+        }
+
+        ul {
+
+          .open,
+          .sidebar-group-active {
+            >a {
+              background-color: $light;
+            }
+          }
+        }
+      }
+
+      .nav-item {
+
+        i,
+        svg {
+          color: $light-text-color;
+        }
+
+        &.open {
+          >a {
+            background-color: $menu-light  !important;
+          }
+        }
+
+        a:after {
+          color: $light-text-color;
+        }
+
+        .menu-content {
+          background-color: $menu-light;
+
+          .active {
+            .menu-item {
+              color: $light-text-color;
+            }
+          }
+        }
+      }
+
+      .active {
+
+        .menu-title,
+        i,
+        svg {
+          color: $light-text-color;
+        }
+      }
+
+      .sidebar-group-active {
+        .menu-content {
+          background-color: $menu-light;
+
+          .active {
+            z-index: 1;
+
+            a {
+              background-color: transparent;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // menu collapsed active item color
+  .menu-collapsed {
+    .main-menu:not(.expanded) {
+      .navigation-main {
+        li.active {
+          >a {
+            background: $light  !important;
+          }
+        }
+      }
+    }
+  }
+
+  /********* COMPONENTS *********/
+  // alerts
+  .alert {
+
+    .alert-heading,
+    p {
+      color: inherit;
+    }
+
+    .close {
+      text-shadow: none;
+    }
+
+    &.alert-light {
+
+      .alert-heading,
+      .alert-body,
+      p {
+        color: $gray-600;
+      }
+
+      &.alert-dismissible .close {
+        color: $gray-600  !important;
+      }
+    }
+  }
+
+  // breadcrumbs
+
+  // Header breadcrumb
+  .content-header-left {
+    .breadcrumbs-top {
+      .content-header-title {
+        color: $light-text-color;
+        border-color: $primary;
+      }
+    }
+  }
+
+  // Breadcrumb light style
+  .breadcrumb {
+    .breadcrumb-item {
+      color: $light-text-color;
+
+      +.breadcrumb-item::before {
+        color: $light-text-color;
+      }
+    }
+
+    &:not([class*='breadcrumb-']) {
+      .breadcrumb-item+.breadcrumb-item {
+        &:before {
+          background-image: url(str-replace(
+ str-replace($chevron-right, 'currentColor', $light-text-color),
+            '#',
+            '%23'
+            ));
+        }
+      }
+    }
+  }
+
+  // Breadcrumb with Chevron
+  .breadcrumb-chevron {
+    &.breadcrumb {
+      .breadcrumb-item+.breadcrumb-item:before {
+        background-image: url(str-replace(
+ str-replace($chevron-right, 'currentColor', $light-text-color),
+          '#',
+          '%23'
+          ));
+      }
+    }
+  }
+
+  // collapse
+
+  [class*='collapse-'] .card:not(:last-of-type) {
+    border-color: $primary;
+  }
+
+  // for shadow and bordered
+  .collapse-border {
+    .card {
+      border-color: $primary;
+    }
+  }
+
+  // Collapse shadow
+  .collapse-shadow {
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.24);
+  }
+
+  // margin collapse
+  .collapse-margin {
+    .card {
+      box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.24) !important;
+    }
+  }
+
+  // if there is an anchor tag inside
+  .collapse-icon {
+    .card-header {
+      a {
+        color: $light-text-color;
+      }
+    }
+
+    [data-toggle='collapse'] {
+      &:after {
+        background-image: url(str-replace(
+ str-replace($chevron-down, 'currentColor', $light-text-color),
+          '#',
+          '%23'
+          ));
+      }
+
+      &:before {
+        background-image: url(str-replace(
+ str-replace($chevron-up, 'currentColor', $light-text-color),
+          '#',
+          '%23'
+          ));
+      }
+    }
+  }
+
+  // buttons
+  .btn {
+
+    &.btn-secondary {
+      color: $light-text-color  !important;
+      background: $light  !important;
+      border-color: transparent !important;
+    }
+
+    &.btn-secondary:hover {
+      color: $light-text-color  !important;
+      background: $light  !important;
+      border-color: transparent !important;
+      box-shadow: none !important;
+    }
+
+    &:not([class*='btn-']) {
+      color: $light-text-color;
+    }
+
+    &.btn-light,
+    &.btn-outline-light,
+    &.btn-flat-light {
+      color: $gray-600;
+    }
+
+    &.btn-light {
+      background-color: $light  !important;
+    }
+
+    &.btn-outline-light {
+      border-color: $light;
+      color: $gray-600;
+
+      &:hover:not(.disabled):not(:disabled) {
+        color: $gray-600;
+      }
+    }
+
+    &.btn-flat-light {
+
+      &:active,
+      &:focus {
+        background: $light;
+      }
+    }
+  }
+
+  .btn-group-toggle {
+    label[class*='btn-outline-'] {
+      color: $primary  !important;
+    }
+  }
+
+  // dropdown
+  .dropdown-menu {
+    background-color: $menu-light;
+    box-shadow: 0 4px 24px 0 rgba(0, 0, 0, 0.24);
+
+    .dropdown-header {
+      color: $light-text-color;
+    }
+
+    .dropdown-item {
+      color: $light-text-color;
+
+      &:hover,
+      &:focus {
+        background: $dropdown-link-hover-bg;
+        color: $dropdown-link-hover-color;
+      }
+
+      &:active,
+      &.active {
+        color: $dropdown-link-active-color;
+        background-color: $dropdown-link-active-bg;
+      }
+
+      &.disabled,
+      &:disabled {
+        color: $light-text-muted-color;
+      }
+    }
+  }
+
+  .dropdown-divider {
+    border-color: $primary;
+  }
+
+  // modal
+  .modal {
+
+    .modal-header,
+    .modal-header[class*='bg-'] {
+      // why removed !important? Not working if added bg-COLOR class with modal-header
+      // background-color: $menu-light !important;
+      background-color: $light;
+    }
+
+    // close button
+    .modal-header .close {
+      text-shadow: none;
+      background-color: $menu-light  !important;
+      color: $light-text-color;
+      box-shadow: 0 3px 8px 0 rgba(11, 10, 25, 0.49) !important;
+    }
+
+    .modal-content,
+    .modal-body,
+    .modal-footer {
+      background-color: $menu-light;
+      border-color: $primary;
+    }
+  }
+
+  //pagination
+  .pagination {
+
+    color: $light-text-color  !important;
+
+    &:not([class*='pagination-']) {
+      .page-item {
+        &.active {
+          background-color: $menu-light;
+
+          .page-link {
+            background-color: $primary;
+
+            &:hover {
+              color: $light-text-color;
+            }
+          }
+        }
+
+        .page-link {
+          background-color: $menu-light;
+          color: $light-text-color;
+
+          &:hover {
+            color: $primary;
+          }
+        }
+
+        &.prev-item,
+        &.next-item {
+          .page-link:hover {
+            color: $light-text-color;
+          }
+        }
+      }
+    }
+
+    &[class*='pagination-'] {
+      .page-item:not(.active) {
+        .page-link {
+          background-color: $menu-light;
+        }
+
+        &:not(:hover) {
+          .page-link {
+            color: $light-text-color;
+          }
+        }
+      }
+
+      .page-item {
+        &:not(.active) {
+          .page-link:hover {
+            background-color: $menu-light;
+          }
+        }
+
+        &.active {
+          background-color: $menu-light;
+        }
+      }
+    }
+
+    .page-item {
+
+      &.prev-item,
+      &.prev {
+        .page-link:before {
+          background-image: url(str-replace(
+ str-replace($chevron-left, 'currentColor', $light-text-color),
+            '#',
+            '%23'
+            ));
+        }
+
+        &.disabled {
+          .page-link {
+            &:before {
+              background-image: url(str-replace(
+ str-replace($chevron-left, 'currentColor', $light-text-muted-color),
+                '#',
+                '%23'
+                ));
+            }
+          }
+        }
+      }
+
+      &.next-item,
+      &.next {
+        .page-link::after {
+          background-image: url(str-replace(
+ str-replace($chevron-right, 'currentColor', $light-text-color),
+            '#',
+            '%23'
+            ));
+        }
+
+        &.disabled {
+          .page-link {
+            &:after {
+              background-image: url(str-replace(
+ str-replace($chevron-right, 'currentColor', $light-text-muted-color),
+                '#',
+                '%23'
+                ));
+            }
+          }
+        }
+      }
+
+      &.disabled {
+        .page-link {
+          color: $light-text-muted-color;
+        }
+      }
+    }
+  }
+
+  // nav tabs
+  .nav-tabs,
+  .nav-pills,
+  .nav-tabs.nav-justified {
+    .nav-item {
+      .nav-link {
+        color: $light-text-color;
+
+        &.active {
+          background-color: $menu-light;
+          color: $light-text-color;
+        }
+
+        &.disabled {
+          color: $light-text-muted-color;
+        }
+      }
+    }
+  }
+
+  // bordered nav
+  .nav.wrap-border {
+    border-color: $primary;
+  }
+
+  // nav pills
+  .nav-pills {
+    .nav-item {
+      .nav-link {
+        &.active {
+          color: $light-text-color;
+          background-color: $primary;
+        }
+      }
+    }
+  }
+
+  // media
+  .media-bordered {
+    .media:not(:first-child) {
+      border-color: $primary;
+    }
+  }
+
+  // popover
+  .popover {
+    &[x-placement='top'] {
+      .arrow {
+        &:before {
+          border-top-color: $primary;
+        }
+
+        &:after {
+          border-top-color: $menu-light;
+        }
+      }
+    }
+
+    &[x-placement='left'] {
+      .arrow {
+        &:before {
+          border-left-color: $primary;
+        }
+
+        &:after {
+          border-left-color: $menu-light;
+        }
+      }
+    }
+
+    &[x-placement='right'] {
+      .arrow {
+        &:before {
+          border-right-color: $primary;
+        }
+
+        &:after {
+          border-right-color: $menu-light;
+        }
+      }
+    }
+
+    .popover-header {
+      color: $light-text-color;
+    }
+
+    .popover-body {
+      background-color: $menu-light;
+      color: $light-text-color;
+      border-color: $primary  !important;
+    }
+  }
+
+  // BS toast
+  .toast {
+    background-color: rgba($menu-light, 0.85);
+    box-shadow: $light-box-shadow;
+    color: $light-text-color;
+
+    .toast-header {
+      background-color: $menu-light;
+      color: $light-text-color;
+
+      .close {
+        background-color: transparent !important;
+        box-shadow: none !important;
+        text-shadow: none;
+      }
+    }
+  }
+
+  // list group
+  .list-group {
+    .list-group-item {
+
+      &:not([class*='list-group-item-']),
+      &.list-group-item-action {
+        background-color: $menu-light;
+        border-color: $primary;
+        color: $light-text-color;
+
+        &:hover,
+        &:focus {
+          background-color: $light;
+        }
+
+        &.active,
+        &:active {
+          background-color: $primary;
+          color: $light-text-color;
+        }
+      }
+
+      &.active {
+
+        p,
+        small {
+          color: $light-text-color;
+        }
+      }
+
+      &.disabled {
+        color: $light-text-muted-color;
+      }
+    }
+
+    &.list-group-circle .list-group-item:after {
+      background-image: url(str-replace(str-replace($circle, 'currentColor', $light-text-color), '#', '%23'));
+    }
+  }
+
+  // spinners
+  .spinner-border {
+    border-color: currentColor !important;
+    border-right-color: transparent !important;
+  }
+
+  // avatar
+  .avatar {
+    background-color: $light;
+
+    [class*='avatar-status-'] {
+      border-color: $menu-light;
+    }
+  }
+
+  .avatar-group {
+    .avatar {
+
+      img,
+      .avatar-content {
+        box-shadow: 0 0 0 2px $menu-light, inset 0 0 0 1px rgba($menu-light, 0.07);
+      }
+    }
+  }
+
+  // divider
+  .divider {
+    .divider-text {
+      color: $light-text-color;
+
+      &::before,
+      &::after {
+        border-color: $primary;
+      }
+    }
+
+    &.divider-light {
+      .divider-text {
+
+        &::before,
+        &::after {
+          border-color: $primary  !important;
+        }
+      }
+    }
+  }
+
+  // Timeline
+  .timeline {
+    .timeline-item {
+      border-color: $primary;
+
+      .timeline-point:not(.timeline-point-indicator) {
+        background-color: $menu-light;
+      }
+
+      .timeline-event {
+        .timeline-event-time {
+          color: $light-text-muted-color;
+        }
+      }
+
+      &:last-of-type:after {
+        background: linear-gradient($primary, transparent);
+      }
+    }
+  }
+
+  // card
+  .card {
+    background-color: $menu-light;
+    box-shadow: $light-box-shadow;
+
+    .card-footer {
+      border-color: $primary;
+    }
+
+    &.overlay-img-card {
+      .card-img-overlay {
+
+        span,
+        p,
+        .card-body {
+          color: $light-text-color;
+        }
+      }
+    }
+  }
+
+  //--------------- Advance Cards ---------------
+  //---------------------------------------------
+
+  // Developer Meetup Card
+  .card-developer-meetup {
+    .meetup-header .meetup-day {
+      border-right-color: $light-input-border;
+    }
+  }
+
+  // Profile Card
+  .card-profile {
+    .profile-image-wrapper .profile-image {
+      background-color: $light;
+    }
+  }
+
+  // Business Card
+  .business-card {
+    .business-items .business-item {
+      border-color: $primary;
+    }
+  }
+
+  // App Design Card
+  .card-app-design {
+    .design-planning-wrapper .design-planning {
+      background-color: $light;
+    }
+  }
+
+  //--------------- Statistics Card ---------------
+  //------------------------------------------------
+
+  .card-tiny-line-stats {
+    .apexcharts-series-markers {
+      .apexcharts-marker {
+        stroke: $info;
+      }
+
+      &:last-child {
+        .apexcharts-marker {
+          fill: $menu-light;
+        }
+      }
+    }
+  }
+
+  //-------------- Analytics Cards --------------
+  //---------------------------------------------
+
+  // Revenue Report Card
+  .card-revenue-budget {
+    .revenue-report-wrapper {
+      border-right-color: $primary;
+    }
+
+    .budget-wrapper {
+      .apexcharts-series:not(:first-child) {
+        path {
+          stroke: $light-text-color;
+        }
+      }
+    }
+  }
+
+  // Earnings Card
+  .earnings-card {
+    .apexcharts-canvas .apexcharts-pie {
+      .apexcharts-datalabel-label {
+        fill: $light-text-color  !important;
+      }
+
+      .apexcharts-datalabel-value {
+        fill: $light-text-color;
+      }
+    }
+  }
+
+  // Company Table Card
+  .card-company-table {
+    .avatar {
+      background-color: $light;
+    }
+  }
+
+  /********** FORMS **********/
+
+  // input
+  input.form-control,
+  .custom-file-label,
+  textarea.form-control {
+    background-color: $light-input-bg !important;
+    color: $light-text-color;
+
+    &:not(:focus) {
+      border-color: $light-input-border;
+    }
+
+    &::placeholder {
+      color: $light-input-placeholder;
+    }
+
+    &:disabled,
+    &[readonly='readonly'] {
+      opacity: 0.5;
+      background-color: $menu-light-2  !important;
+    }
+  }
+
+  // text area counter
+  .char-textarea {
+    &.active {
+      color: $light-text-color  !important;
+    }
+
+    &.max-limit {
+      color: $danger  !important;
+    }
+  }
+
+  // file uploader default
+  .custom-file-label {
+    &:after {
+      background-color: $light;
+      border-left: 1px solid $primary;
+      color: $light-text-color;
+    }
+  }
+
+  // custom control like checkbox, radio and switch
+  .custom-control-input {
+    &:not(:checked) {
+      ~.custom-control-label:before {
+        background-color: $menu-light;
+        border-color: $light-input-border;
+      }
+    }
+
+    &:disabled {
+      ~.custom-control-label:before {
+        background-color: $menu-light;
+        border-color: $light-input-disabled-border;
+      }
+    }
+  }
+
+  .custom-switch {
+    .custom-control-input:not(:checked) {
+      ~.custom-control-label:before {
+        background-color: $light-switch;
+      }
+    }
+
+    .custom-control-input:disabled {
+      ~.custom-control-label:before {
+        background-color: $light-switch-disabled;
+      }
+    }
+  }
+
+  // select
+  select.form-control,
+  .custom-select {
+    background-color: $light-input-bg;
+    color: $light-text-color;
+    border-color: $primary;
+
+    option:checked {
+      background-color: $menu-light;
+    }
+
+    &:disabled {
+      opacity: 0.5;
+    }
+
+    &:focus {
+      border-color: $primary;
+    }
+  }
+
+  select.form-control {
+    &:not([multiple='multiple']) {
+      background-image: url(str-replace(
+ str-replace($chevron-down, 'currentColor', $light-text-color),
+        '#',
+        '%23'
+        ));
+    }
+  }
+
+  // Added for override
+  .was-validated .form-control:invalid,
+  .form-control.is-invalid {
+    border-color: $danger  !important;
+  }
+
+  .was-validated .form-control:valid,
+  .form-control.is-valid {
+    border-color: $success  !important;
+  }
+
+  // form wizard
+  .wizard {
+    .steps {
+      ul {
+
+        .disabled,
+        .done {
+          a {
+            color: $light-text-color  !important;
+
+            &:hover {
+              color: $light-text-color;
+            }
+
+            .step {
+              background-color: $light  !important;
+              color: $light-text-color  !important;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // input groups
+  .input-group {
+    .input-group-text {
+      background-color: $light-input-bg;
+      border-color: $primary;
+      color: $light-text-color;
+    }
+
+    &:focus-within {
+
+      .form-control,
+      .input-group-text {
+        border-color: $primary;
+        box-shadow: none;
+      }
+    }
+  }
+
+  // floating label
+  .form-label-group {
+
+    &>input:not(:focus):not(:placeholder-shown)~label,
+    &>textarea:not(:focus):not(:placeholder-shown)~label {
+      color: $light-text-color  !important;
+    }
+  }
+
+  .counter-value {
+    color: white;
+  }
+
+  /********** TABLE **********/
+
+  // table
+  .table {
+    background-color: $light-table;
+
+    td,
+    th {
+      color: $light-text-color;
+      border-color: $primary  !important;
+    }
+
+    .thead,
+    tbody {
+      tr:not([class*='table-']) {
+
+        th,
+        td {
+          border-color: $primary;
+          color: $light-text-color;
+
+          code {
+            background-color: $light-table-row;
+          }
+        }
+      }
+    }
+
+    thead,
+    tfoot {
+      tr {
+        th {
+          border-color: $primary;
+          background-color: $light-table-header;
+          color: $light-text-color;
+        }
+      }
+
+      &.thead-light th {
+        background-color: $white;
+        color: $light  !important;
+      }
+    }
+
+    // if table not light/light and thead not have light class
+    &:not(.table-light):not(.table-light) thead:not(.thead-light) th,
+    &:not(.table-light):not(.table-light) tfoot:not(.thead-light) th {
+      background-color: $light-table-header;
+    }
+
+    // table-light style
+    &.table-light {
+      background-color: $white;
+
+      &.table-striped tbody tr:nth-of-type(odd) {
+        background-color: rgba($light, 0.05);
+
+        td {
+          background-color: inherit;
+        }
+      }
+
+      td,
+      th {
+        border-color: #f8f9fa !important;
+        color: $light  !important;
+        background-color: $white;
+
+        .text-white {
+          color: $light  !important;
+        }
+      }
+    }
+
+    tbody {
+      tr {
+
+        // for contextual classes
+        &[class*='table-'] {
+
+          td,
+          th {
+            background-color: unset;
+          }
+        }
+
+        &.table-light {
+
+          td,
+          th {
+            color: $white;
+          }
+        }
+
+        &.table-active {
+
+          td,
+          th {
+            color: $light-text-color;
+          }
+        }
+      }
+    }
+
+    // bordered table
+    &.table-bordered {
+      border-color: $primary;
+    }
+
+    // table hover row color
+    &.table-hover {
+      tbody {
+        tr {
+          &:hover {
+            background-color: $light-table-hover;
+          }
+
+          th,
+          td {
+            background-color: unset;
+          }
+        }
+      }
+    }
+
+    // hover animation
+    &.table-hover-animation tbody tr {
+      background-color: $light-table;
+
+      &:hover {
+        box-shadow: $light-box-shadow;
+      }
+    }
+
+    // table striped
+    &.table-striped {
+      tbody {
+        tr {
+          &:nth-of-type(odd) {
+            background-color: $light-table-striped;
+          }
+        }
+      }
+    }
+  }
+
+  // datatable
+  .dataTables_wrapper {
+    .dt-buttons {
+
+      .buttons-copy,
+      .buttons-excel,
+      .buttons-pdf,
+      .buttons-print,
+      .btn-secondary,
+      [class*='buttons-'] {
+        background-color: $light  !important;
+
+        &:active {
+          background-color: $primary  !important;
+          color: $white;
+        }
+      }
+    }
+
+    .dt-button-collection {
+      >div[role='menu'] {
+        box-shadow: $light-box-shadow;
+      }
+    }
+
+    .table.dataTable {
+      tr {
+        &.group {
+          td {
+            background-color: $light-table-striped;
+            color: $light-text-color;
+          }
+        }
+      }
+
+      // Sorting Icons Change
+      thead {
+
+        .sorting,
+        .sorting_asc,
+        .sorting_desc {
+          &:before {
+            background-image: url(str-replace(
+ str-replace($chevron-up, 'currentColor', $light-text-color),
+              '#',
+              '%23'
+              ));
+          }
+
+          &:after {
+            background-image: url(str-replace(
+ str-replace($chevron-down, 'currentColor', $light-text-color),
+              '#',
+              '%23'
+              ));
+          }
+        }
+
+        .sorting {
+
+          &:before,
+          &:after {
+            opacity: 0.5;
+          }
+        }
+
+        .sorting_asc {
+          &:before {
+            opacity: 1;
+          }
+
+          &:after {
+            opacity: 0.5;
+          }
+        }
+
+        .sorting_desc {
+          &:after {
+            opacity: 1;
+          }
+
+          &:before {
+            opacity: 0.5;
+          }
+        }
+      }
+    }
+  }
+
+  // agGrid Page Btn
+  .ag-grid-btns {
+    .filter-btn {
+      background-color: transparent !important;
+    }
+  }
+
+  // agGrid Main
+  .aggrid {
+    .ag-input-wrapper input {
+      color: $light-text-color;
+    }
+  }
+
+  .aggrid,
+  .ag-header {
+    background-color: $menu-light;
+    color: $light-text-color;
+    border-color: $primary;
+
+    .ag-row-hover,
+    .ag-row-selected {
+      background-color: $light-table-hover  !important;
+    }
+
+    .ag-icon {
+      color: $light-input-border;
+    }
+
+    .ag-header-cell.ag-column-hover {
+      background: transparent !important;
+    }
+
+    .ag-header-cell,
+    .ag-cell,
+    .ag-row,
+    .ag-pinned-left-header,
+    .ag-pinned-left-cols-container,
+    .ag-horizontal-left-spacer,
+    .ag-paging-panel,
+    .ag-floating-filter-input {
+      border-color: $primary  !important;
+      color: $light-text-color;
+    }
+
+    .ag-cell.ag-cell-inline-editing {
+      border-color: $primary;
+      background: $light;
+      height: auto;
+      padding-top: 0;
+    }
+
+    .ag-paging-panel {
+      .ag-paging-button {
+        background-color: $light;
+      }
+
+      .ag-disabled {
+        background: $menu-light;
+      }
+
+      span[ref='lbTotal'] {
+        background-color: $menu-light;
+        color: $light-text-color  !important;
+      }
+    }
+
+    ::-webkit-scrollbar-track {
+      background: $light;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: $primary;
+    }
+  }
+
+  /********** PAGES **********/
+
+  // coming soon
+  .getting-started {
+    .clockCard {
+      p {
+        color: $light-text-color  !important;
+      }
+    }
+  }
+
+  // profile page
+  #user-profile {
+    .profile-header {
+      .navbar {
+        background-color: $menu-light;
+
+        .navbar-toggler {
+          color: $light-text-color;
+          border-color: $primary;
+        }
+      }
+    }
+  }
+
+  // Search page
+  .search-bar {
+    .form-control {
+      background-color: $menu-light;
+    }
+  }
+
+  // Blog Edit Page
+  .blog-edit-wrapper {
+    .border {
+      border-color: $primary  !important;
+    }
+  }
+
+  // Knowledge Base
+  .kb-search-content-info {
+    .kb-search-content {
+      .card-img-top {
+        background-color: #3f4860;
+      }
+    }
+  }
+
+  // list group circle for kb
+  .list-group-circle {
+
+    .list-group-item:not([class*='list-group-item-']),
+    .list-group-item-action {
+
+      &:hover,
+      &:focus,
+      &:active {
+        background-color: transparent !important;
+      }
+    }
+  }
+
+  /********** APPLICATIONS **********/
+
+  // App common sidebar and content light style
+  .content-area-wrapper {
+    border-color: $primary  !important;
+
+    .sidebar {
+      .sidebar-content {
+        background-color: $menu-light  !important;
+      }
+    }
+
+    .app-fixed-search {
+      background-color: $menu-light  !important;
+      border-color: $primary  !important;
+    }
+
+    .content-right {
+      border-color: $primary  !important;
+    }
+  }
+
+  // email application
+  .email-application {
+    .content-area-wrapper {
+
+      // Email list
+      .email-app-list {
+        .app-action {
+          border-color: $primary;
+          background-color: $menu-light;
+
+          .action-right {
+            .list-inline-item {
+              .dropdown-toggle {
+                color: $light-text-color;
+              }
+            }
+          }
+        }
+
+        .email-user-list {
+          .media {
+            border-color: $primary;
+            background-color: $menu-light;
+
+            &:hover {
+              box-shadow: 0 3px 10px 0 $menu-light;
+            }
+
+            &.selected-row-bg {
+              background-color: rgba($primary, 0.06);
+              border-color: $primary;
+            }
+          }
+
+          .media {
+
+            .user-details,
+            .mail-message {
+
+              p,
+              .mail-date {
+                color: $light-text-muted-color;
+              }
+            }
+          }
+
+          .mail-read {
+            background-color: $light-table-hover;
+          }
+        }
+      }
+
+      // app email details
+      .email-app-details {
+        border-color: $primary;
+
+        .email-scroll-area {
+          background-color: $light;
+        }
+
+        .email-detail-header {
+          background-color: $menu-light;
+          border-color: $primary;
+
+          .email-header-right {
+            .list-inline-item {
+
+              .dropdown-toggle,
+              .action-icon {
+                color: $light-text-color;
+              }
+            }
+          }
+        }
+
+        .email-info-dropup {
+          .dropdown-toggle::after {
+            background-image: url(str-replace(
+ str-replace($chevron-down, 'currentColor', $light-text-muted-color),
+              '#',
+              '%23'
+              ));
+          }
+        }
+
+        .mail-message-wrapper,
+        .email-detail-head {
+          border-color: $primary  !important;
+        }
+      }
+
+      // Compose mail
+      #compose-mail {
+
+        .compose-mail-form-field,
+        .ql-toolbar,
+        .ql-container {
+          border-color: $primary;
+        }
+
+        label {
+          color: $light-text-color;
+        }
+
+        .modal-body {
+          border-bottom-left-radius: $modal-content-border-radius;
+          border-bottom-right-radius: $modal-content-border-radius;
+        }
+      }
+    }
+  }
+
+  // chat application
+  .chat-application {
+    .content-area-wrapper {
+      border-color: $primary;
+    }
+
+    // left sidebar
+    .sidebar {
+      .chat-profile-sidebar {
+        background-color: $menu-light;
+        border-color: $primary;
+      }
+
+      .sidebar-content {
+        border-color: $primary;
+
+        .chat-fixed-search {
+          border-color: $primary;
+        }
+
+        .chat-user-list-wrapper {
+          .chat-users-list {
+            li {
+              &:not(.active):hover {
+                background: $light;
+              }
+
+              .chat-info .card-text,
+              .chat-time {
+                color: $light-text-muted-color;
+              }
+
+              &.active {
+
+                .chat-info .card-text,
+                .chat-time {
+                  color: $white;
+                }
+              }
+
+              img {
+                border-color: $primary;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .avatar-border {
+      img {
+        border-color: $primary;
+      }
+    }
+
+    // Right side content area
+    .content-right {
+      .chat-app-window {
+        .start-chat-area {
+          background-color: $menu-light;
+
+          .start-chat-icon,
+          .start-chat-text {
+            background: $menu-light;
+            color: $light-text-color;
+          }
+        }
+
+        .start-chat-area,
+        .user-chats {
+          background-image: url($chat-bg-light);
+          background-color: #1e232f;
+        }
+
+        .user-chats {
+          .divider .divider-text {
+            background: $menu-light;
+
+            &:before,
+            &:after {
+              border-color: $primary;
+            }
+          }
+
+          .avatar img {
+            border-color: $primary;
+          }
+        }
+
+        // Active conversation style
+        .active-chat {
+          .chat-left {
+            .chat-content {
+              background-color: $menu-light;
+
+              p {
+                color: $light-text-color;
+              }
+            }
+          }
+
+          .chat-content {
+            p {
+              color: $white;
+            }
+          }
+
+          // Chat form
+          .chat-header .dropdown-toggle {
+            color: $light-text-color;
+          }
+
+          .chat-header,
+          .chat-app-form {
+            background-color: $menu-light;
+            border-color: $primary;
+          }
+        }
+      }
+
+      .user-profile-sidebar {
+        background-color: $menu-light;
+        border-color: $primary;
+      }
+    }
+  }
+
+  // Chat widget light style
+  .chat-widget {
+    .user-chats {
+      background-color: $menu-light  !important;
+    }
+
+    .card-header,
+    .chat-app-form {
+      background-color: $menu-light;
+    }
+
+    .chat-app-window .user-chats .chat-left .chat-content {
+      background-color: $menu-light  !important;
+      color: $light-text-color  !important;
+    }
+
+    .chat-app-window .user-chats .avatar img {
+      border-color: $light;
+    }
+  }
+
+  // Kanban application
+  .kanban-application {
+    .kanban-wrapper {
+      .kanban-container {
+        .kanban-board {
+          .kanban-board-header {
+            .kanban-title-board {
+              color: $white;
+
+              &:hover,
+              &:focus {
+                background-color: $menu-light;
+              }
+            }
+          }
+
+          .kanban-item {
+            background-color: $menu-light;
+
+            .item-dropdown i.dropdown-toggle,
+            .item-dropdown svg.dropdown-toggle {
+              stroke: $white;
+            }
+
+            .kanban-title-button {
+              color: $light-text-color;
+            }
+
+            i,
+            svg {
+              stroke: $light-text-color;
+            }
+          }
+        }
+      }
+    }
+
+    .update-item-sidebar {
+
+      .nav-tabs .nav-item .nav-link,
+      .tab-content .tab-pane {
+        background-color: transparent;
+      }
+    }
+  }
+
+  .kanban-item.gu-mirror {
+    background-color: $menu-light;
+  }
+
+  // Todo application
+  .todo-application {
+    .content-area-wrapper {
+      .sidebar {
+        .todo-form {
+          .todo-item-action {
+            color: $light-text-color;
+          }
+        }
+      }
+
+      .content-right {
+        .todo-task-list-wrapper {
+          background-color: $menu-light  !important;
+          border-color: $primary;
+        }
+
+        .todo-task-list {
+          .todo-item {
+            &:not(:first-child) {
+              border-color: $primary;
+            }
+
+            &.completed {
+              .todo-title {
+                color: $light-text-muted-color;
+              }
+            }
+
+            &:hover {
+              box-shadow: $light-box-shadow;
+            }
+
+            .todo-item-action {
+              .todo-item-favorite:not(.text-warning) {
+
+                i,
+                svg {
+                  color: $light-text-color;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .todo-item-action {
+      .close {
+        background-color: transparent !important;
+      }
+    }
+  }
+
+  .todo-item.gu-mirror {
+    background-color: $menu-light;
+    border-color: $primary;
+    box-shadow: $light-box-shadow;
+
+    &.completed {
+      .todo-title {
+        color: $light-text-muted-color;
+      }
+    }
+  }
+
+  // E-commerce application
+  .ecommerce-application {
+    .ecommerce-card {
+      .btn-light {
+        background-color: $light  !important;
+        color: $white;
+        border-color: transparent;
+      }
+    }
+
+    // main content
+    .content-right,
+    .content-body {
+
+      // header items
+      .ecommerce-header-items {
+        .result-toggler {
+          .search-results {
+            color: $light-text-color;
+          }
+
+          .shop-sidebar-toggler {
+
+            i,
+            svg {
+              color: $light-text-color;
+            }
+          }
+        }
+      }
+
+      // list and grid view
+      .grid-view,
+      .list-view {
+        .ecommerce-card {
+          .card-body {
+            border-color: $primary;
+          }
+
+          .item-options {
+            .wishlist {
+              span {
+                color: $headings-color;
+              }
+            }
+
+            .cart {
+              span {
+                color: $white;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .grid-view {
+
+      .item-name a,
+      .item-price {
+        color: $light-text-color;
+      }
+    }
+
+    // wishlist-items
+    .wishlist-items {
+      .ecommerce-card {
+        .move-cart {
+          .move-to-cart {
+            color: $white;
+          }
+        }
+      }
+    }
+
+    // checkout
+    .product-checkout {
+      .checkout-options {
+        .coupons {
+          input {
+            color: $light-text-color;
+
+            &::placeholder {
+              color: $light-text-color;
+            }
+          }
+        }
+      }
+    }
+
+    // Ecommerce details
+    .app-ecommerce-details {
+
+      .item-features,
+      .swiper-responsive-breakpoints.swiper-container .swiper-slide {
+        background-color: $light;
+      }
+    }
+  }
+
+  // file manager app
+  .file-manager-application {
+    .sidebar-file-manager {
+      background-color: $menu-light  !important;
+
+      .jstree {
+        .jstree-container-ul {
+          .jstree-anchor {
+            color: $light-text-color;
+          }
+        }
+      }
+
+      .storage-status {
+
+        i,
+        svg {
+          color: $light-text-color  !important;
+        }
+      }
+
+      .file-manager-title {
+        color: $light-text-color;
+      }
+
+      &.show {
+        border: 1px solid $primary  !important;
+      }
+    }
+
+    .content-area-wrapper {
+      border: 1px solid $primary  !important;
+    }
+
+    // File Manager App
+    .file-manager-main-content {
+      border: 1px solid $primary  !important;
+
+      .file-manager-app-searchbar {
+        background-color: transparent !important;
+        border-bottom: 1px solid $primary  !important;
+
+        .file-manager-toggler {
+          color: $light-text-color  !important;
+        }
+      }
+
+      .file-manager-content-header,
+      .file-manager-content-body {
+        background-color: $menu-light  !important;
+      }
+
+      .file-manager-content-header {
+        border-color: $primary  !important;
+      }
+
+      .file-manager-content-body {
+        .drives {
+          .card {
+            background-color: $light-table;
+          }
+        }
+
+        .view-container {
+          .file-manager-item {
+            .file-logo-wrapper {
+              background-color: $light  !important;
+            }
+
+            &:not(.selected) {
+              border-color: $primary  !important;
+            }
+          }
+
+          &:not(.list-view) {
+            .file-manager-item {
+
+              .file-size,
+              .file-accessed {
+                color: $light-text-muted-color  !important;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    #app-file-manager-info-sidebar {
+
+      .nav-tabs .nav-link,
+      .tab-content .tab-pane {
+        background-color: transparent;
+      }
+
+      .nav-tabs {
+        .nav-item:not(.active) {
+          .nav-link {
+            color: $light-text-color;
+          }
+        }
+      }
+    }
+  }
+
+  // calendar
+  .app-calendar {
+    .app-calendar-sidebar {
+      background-color: $menu-light;
+      border-color: $primary;
+
+      .sidebar-content-title {
+        color: $light-text-color;
+      }
+
+      .select-all,
+      .input-filter {
+        ~label {
+          color: $light-text-color;
+        }
+      }
+    }
+
+    .fc {
+      .fc-day-today {
+        background: $light  !important;
+        background-color: $light  !important;
+      }
+
+      .fc-timegrid {
+        .fc-scrollgrid-section {
+
+          .fc-col-header-cell,
+          .fc-timegrid-axis,
+          .fc-daygrid-day {
+            background-color: $menu-light;
+            border-color: $primary;
+          }
+
+          .fc-day-today {
+            background-color: rgba($color: $gray-100, $alpha: 0.12) !important;
+
+            &.fc-col-header-cell {
+              background-color: $menu-light  !important;
+            }
+          }
+        }
+      }
+
+      .fc-popover {
+        background: $menu-light;
+        border-color: $primary;
+      }
+
+      .fc-popover-header {
+
+        .fc-popover-title,
+        .fc-popover-close {
+          color: $light-text-color;
+        }
+      }
+
+      tbody td,
+      thead th {
+        border-color: $primary;
+      }
+
+      .fc-scrollgrid {
+        border-color: $primary;
+      }
+
+      .fc-list,
+      th {
+        border-color: $primary;
+
+        .fc-list-day-cushion {
+          background: $light;
+        }
+
+        .fc-list-event:hover td {
+          background-color: $light;
+        }
+
+        .fc-list-event-time {
+          color: $light-text-color;
+        }
+
+        .fc-list-event {
+          td {
+            border-color: $primary;
+          }
+        }
+      }
+    }
+  }
+
+  // Invoice Application
+  .invoice-list-wrapper {
+    .dataTables_wrapper {
+      .invoice-list-dataTable-header {
+        background-color: $menu-light;
+        border-color: $primary;
+      }
+
+      .invoice-data-table {
+        background-color: $menu-light;
+
+        tbody .selected-row-bg {
+          background-color: $primary;
+        }
+
+        td {
+          background-color: inherit;
+        }
+      }
+    }
+  }
+
+  .invoice-edit,
+  .invoice-add {
+    .invoice-preview-card {
+      .invoice-product-details {
+        background-color: $light;
+
+        .product-details-border {
+          background-color: $menu-light;
+          border-color: $primary;
+        }
+      }
+    }
+  }
+
+  .invoice-print {
+    .form-control {
+      background-color: $menu-light;
+    }
+  }
+
+  // Users Application
+  .app-user-view {
+    .plan-card {
+      border-color: $primary  !important;
+    }
+  }
+
+  .app-user-edit {
+    .form-control.error {
+      border-color: $danger  !important;
+    }
+  }
+
+  /********** CUSTOMIZER **********/
+
+  .customizer {
+    background-color: $menu-light;
+
+    .customizer-close {
+
+      i,
+      svg {
+        color: $light-text-color;
+      }
+    }
+  }
+
+  .footer-fixed {
+    .footer {
+      background-color: $menu-light;
+    }
+  }
+
+  /********** HORIZONTAL LAYOUT **********/
+  .horizontal-layout {
+    &.navbar-sticky .horizontal-menu-wrapper .navbar-horizontal.header-navbar.fixed-top {
+      box-shadow: 0 4px 24px 0 rgba($black, 0.75) !important;
+    }
+
+    .horizontal-menu-wrapper {
+      background: linear-gradient(to bottom,
+          rgba(37, 43, 71, 0.76) 44%,
+          rgba(56, 53, 53, 0.46) 73%,
+          rgba($white, 0) 100%) !important;
+
+      .header-navbar {
+        background: $menu-light  !important;
+
+        &.navbar-shadow {
+          box-shadow: 0 4px 24px 0 rgba($black, 0.75);
+        }
+
+        &.navbar-horizontal {
+          ul#main-menu-navigation>li:hover:not(.active)>a {
+            background: $light;
+          }
+
+          .active {
+            .nav-link {
+              &.dropdown-toggle::after {
+                background-image: url(str-replace(str-replace($chevron-down, 'currentColor', $light-text-color !important), '#', '%23'));
+              }
+            }
+          }
+
+          .nav-link {
+            &.dropdown-toggle::after {
+              background-image: url(str-replace(
+ str-replace($chevron-down, 'currentColor', $light-text-color),
+                '#',
+                '%23'
+                ));
+            }
+          }
+        }
+      }
+    }
+
+    .main-menu-content {
+      .navbar-nav {
+        .dropdown-submenu {
+          &.show {
+            background-color: $menu-light  !important;
+            color: $light-text-color;
+          }
+        }
+
+        .dropdown-menu {
+          a {
+            &:hover {
+              color: $light-text-color  !important;
+            }
+          }
+
+          .disabled a {
+            color: $light-text-muted-color;
+          }
+
+          .dropdown-item {
+            color: $light-text-color;
+          }
+
+          .dropdown-toggle {
+            &::after {
+              background-image: url(str-replace(
+ str-replace($chevron-right, 'currentColor', $light-text-color),
+                '#',
+                '%23'
+                ));
+            }
+
+            &:hover,
+            &:active {
+              &::after {
+                background-image: url(str-replace(str-replace($chevron-right, 'currentColor', $white), '#', '%23'));
+              }
+            }
+          }
+        }
+
+        >li.active {
+          >a {
+
+            >i,
+            >svg {
+              color: $white  !important;
+            }
+          }
+
+          .dropdown-menu {
+            li.active>a {
+              background: $light  !important;
+              color: $light-text-color;
+
+              &:hover {
+                color: $primary  !important;
+              }
+            }
+          }
+
+          .dropdown-menu {
+            li.open.active {
+              >a {
+                color: $light-text-color  !important;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
